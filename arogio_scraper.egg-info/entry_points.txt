@@ -1,0 +1,2 @@
+[console_scripts]
+arogio = arogio.cli:app

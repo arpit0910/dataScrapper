@@ -1,0 +1,6 @@
+locations:
+  jaipur:
+    city: Jaipur
+    state: Rajasthan
+    country: India
+    pincode_prefixes: ["302"]

@@ -1,0 +1,75 @@
+# Candidate sources. Entries remain disabled until normal public access and a
+# parser contract are confirmed. No undocumented/internal API is assumed here.
+sources:
+  icici_lombard_network:
+    authority: insurer
+    entity_types: [hospital]
+    landing_url: https://www.icicilombard.com/cashless-hospitals
+    supplied_format: json
+    adapter_status: payload_ready
+    approval_status: owner_approved
+    request_details: "Provide a current public JSON/CSV export or written permission for automated retrieval; direct page requests currently receive an edge denial."
+  abdm_health_facility_registry:
+    authority: government
+    entity_types: [hospital]
+    landing_url: https://abdm.gov.in/health-facilities
+    supplied_format: web_or_export
+    adapter_status: pending_contract
+    approval_status: pending
+    request_details: "Confirm public download/API access, permitted rate, fields, and attribution requirements."
+  pmjay_empanelled_hospitals:
+    authority: government_scheme
+    entity_types: [hospital]
+    landing_url: https://hospitals.pmjay.gov.in/Search/empnlWorkFlow.htm
+    supplied_format: web_or_pdf
+    adapter_status: pending_contract
+    approval_status: pending
+    request_details: "Confirm ordinary public search/export workflow and current Rajasthan/Jaipur data source."
+  esic_empanelled_hospitals:
+    authority: government
+    entity_types: [hospital]
+    landing_url: https://www.esic.gov.in/
+    supplied_format: pdf_or_web
+    adapter_status: pending_contract
+    approval_status: pending
+    request_details: "Provide the current official empanelled-hospital document or public page for Rajasthan."
+  rajasthan_health_facilities:
+    authority: state_government
+    entity_types: [hospital, doctor]
+    landing_url: https://rajswasthya.rajasthan.gov.in/
+    supplied_format: web_or_export
+    adapter_status: pending_contract
+    approval_status: pending
+    request_details: "Confirm public access to HFR/HPR or GIS data, including whether professional details may be collected."
+  rajasthan_health_gis:
+    authority: state_government
+    entity_types: [hospital]
+    landing_url: https://rajdharaa.rajasthan.gov.in/healthgis/
+    supplied_format: web_map
+    adapter_status: pending_contract
+    approval_status: pending
+    request_details: "Confirm a permitted data export or public endpoint; do not reverse-engineer private map calls."
+  rajasthan_rghs:
+    authority: state_government_scheme
+    entity_types: [hospital, doctor]
+    landing_url: https://rghs.rajasthan.gov.in/RGHS/home/
+    supplied_format: pdf_or_web
+    adapter_status: pending_contract
+    approval_status: pending
+    request_details: "Provide the current public hospital/doctor directory export and permitted reuse terms."
+  rajasthan_rghs_empanelled_hospitals:
+    authority: state_government_scheme
+    entity_types: [hospital]
+    landing_url: https://rghs.rajasthan.gov.in/OPDLISTHOSPITAL.pdf
+    supplied_format: pdf
+    adapter_status: parser_ready
+    approval_status: discovery_only
+    request_details: "Official PDF can be imported locally; its 2023 publication date means empanelment must be reverified before publication."
+  d7_leadfinder_healthcare_directory:
+    authority: commercial_directory
+    entity_types: [hospital, doctor]
+    landing_url: https://d7leadfinder.com/
+    supplied_format: api_or_export
+    adapter_status: permission_required
+    approval_status: pending
+    request_details: "Use an account-authorized API key or downloaded export. Do not create bot accounts or automate the website UI. Discovery only; verify healthcare facts through official/provider sources."

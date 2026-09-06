@@ -1,0 +1,2 @@
+-e .
+pdfplumber>=0.11

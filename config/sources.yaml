@@ -1,0 +1,127 @@
+sources:
+  approved_source:
+    enabled: false
+    name: "Unconfigured approved source"
+    owner: "Pending"
+    category: other_public_source
+    source_status: access_review_pending
+    approved_usage: {discovery: false, verification: false, ingestion: false}
+    machine_access: {automation_permitted: null, local_storage_permitted: null, redistribution_permitted: null}
+    base_url: ""
+    entity_types: [hospital, doctor]
+    requests_per_minute: 10
+    timeout_seconds: 20
+    retries: 3
+  icici_lombard_network:
+    enabled: true
+    name: "ICICI Lombard Cashless Hospital Directory"
+    owner: "ICICI Lombard General Insurance Company Limited"
+    category: insurer_network
+    source_status: permission_pending
+    approved_usage: {discovery: false, verification: false, ingestion: false}
+    machine_access: {automation_permitted: null, local_storage_permitted: null, redistribution_permitted: null}
+    page_url: https://www.icicilombard.com/cashless-hospitals
+    entity_types: [hospital]
+    mode: supplied_json
+    requests_per_minute: 10
+    timeout_seconds: 20
+    retries: 3
+  data_gov_in_hospital_directory:
+    enabled: false
+    entity_types: [hospital]
+    name: "National Hospital Directory with Geo Code and Additional Parameters"
+    owner: "Ministry of Health and Family Welfare / NIHFW"
+    category: government_open_data
+    source_status: access_review_pending
+    approved_usage: {discovery: true, verification: false, ingestion: false}
+    machine_access: {automation_permitted: null, local_storage_permitted: true, redistribution_permitted: true}
+    landing_page_url: https://www.data.gov.in/resource/national-hospital-directory-geo-code-and-additional-parameters-updated-till-last-month
+    download_url: https://data.gov.in/files/ogdpv2dms/s3fs-public/datafile/hospital_directory.csv
+    format: csv
+    update_date: "2025-06-02"
+    file_import: true
+    access_mode: official_file_import
+  rajasthan_rghs_empanelled_hospitals:
+    enabled: false
+    entity_types: [hospital]
+    name: "Rajasthan Government Health Scheme Empanelled Hospitals"
+    owner: "Government of Rajasthan"
+    category: government_directory
+    source_status: access_review_pending
+    approved_usage: {discovery: true, verification: false, ingestion: false}
+    machine_access: {automation_permitted: null, local_storage_permitted: true, redistribution_permitted: null}
+    landing_page_url: https://rghs.rajasthan.gov.in/RGHS/home/
+    download_url: https://rghs.rajasthan.gov.in/OPDLISTHOSPITAL.pdf
+    format: pdf
+    file_import: true
+    access_mode: official_file_import
+  rajasthan_jan_soochna_health_directory:
+    enabled: false
+    entity_types: [hospital, doctor]
+    name: "Rajasthan Jan Soochna Health Directory"
+    owner: "Government of Rajasthan"
+    category: government_directory
+    source_status: access_review_pending
+    approved_usage: {discovery: true, verification: false, ingestion: false}
+    machine_access: {automation_permitted: null, local_storage_permitted: true, redistribution_permitted: null}
+    landing_page_url: https://jansoochna.rajasthan.gov.in/
+    format: csv_or_xlsx
+    file_import: true
+    access_mode: official_file_import
+  nmc_indian_medical_register:
+    enabled: false
+    entity_types: [doctor]
+    name: "NMC Indian Medical Register"
+    owner: "National Medical Commission"
+    category: professional_registry
+    source_status: access_review_pending
+    approved_usage: {discovery: true, verification: true, ingestion: false}
+    machine_access: {automation_permitted: false, local_storage_permitted: null, redistribution_permitted: null}
+    landing_page_url: https://www.nmc.org.in/information-desk/indian-medical-register/
+    format: web_or_official_export
+    file_import: true
+    access_mode: verification_only
+  rajasthan_abdm_health_professional_registry:
+    enabled: false
+    entity_types: [doctor]
+    name: "Rajasthan ABDM Health Professional Registry"
+    owner: "Government of Rajasthan / ABDM"
+    category: professional_registry
+    source_status: access_review_pending
+    approved_usage: {discovery: true, verification: true, ingestion: false}
+    machine_access: {automation_permitted: null, local_storage_permitted: true, redistribution_permitted: null}
+    landing_page_url: https://rajswasthya.rajasthan.gov.in/link/abdmhelp.php
+    format: csv_or_xlsx
+    file_import: true
+    access_mode: official_file_import
+  d7_leadfinder_healthcare_directory:
+    enabled: false
+    entity_types: [hospital, doctor]
+    name: "D7 Lead Finder Healthcare Discovery"
+    owner: "Lead Platforms Ltd"
+    category: healthcare_directory
+    source_status: permission_pending
+    approved_usage: {discovery: true, verification: false, ingestion: false}
+    machine_access: {automation_permitted: false, local_storage_permitted: null, redistribution_permitted: null}
+    landing_page_url: https://d7leadfinder.com/
+    api_docs_url: https://d7leadfinder.com/app/api/
+    format: api_or_csv_export
+    access_mode: permission_required
+    notes: "Use only an account-authorized API key or export. Discovery evidence only; verify with official registries or provider websites."
+  user_supplied_doctor_directory_export:
+    enabled: false
+    entity_types: [doctor]
+    name: "User-supplied Doctor Directory Export"
+    owner: "User-provided file; original sources retained per row"
+    category: other_public_source
+    source_status: approved
+    approved_usage: {discovery: true, verification: false, ingestion: true}
+    machine_access: {automation_permitted: false, local_storage_permitted: true, redistribution_permitted: false}
+    landing_page_url: ""
+    format: csv_or_xlsx
+    file_import: true
+    access_mode: official_file_import
+source_priority:
+  official_government: 100
+  official_provider: 95
+  approved_directory: 70

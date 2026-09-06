@@ -1,0 +1,3 @@
+Sr_No,Hospital_Name,Hospital_Category,Address_Original_First_Line,State,District,Town,Pincode,Telephone,Hospital_Primary_Email_Id,Website,Latitude,Longitude,Specialties
+1,Jaipur General Hospital,Private,12 Tonk Road, Rajasthan,Jaipur,Jaipur,302015,0141-2345678,info@example.com,example.org,26.85,75.80,General Medicine
+2,Outside Hospital,Government,Main Road,Rajasthan,Jodhpur,Jodhpur,342001,0141-0000000,,,26.23,73.02,

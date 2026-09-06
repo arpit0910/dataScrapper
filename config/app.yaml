@@ -1,0 +1,17 @@
+storage:
+  sqlite_path: data/arogio_scraper.db
+  raw_path: data/raw
+export:
+  path: data/exports
+  primary_format: xlsx
+scraping:
+  timeout_seconds: 20
+  max_retries: 3
+  requests_per_minute: 10
+  concurrency: 1
+logging:
+  path: logs/arogio.log
+local_model:
+  provider: ollama
+  endpoint: http://127.0.0.1:11434
+  model: qwen2.5:3b

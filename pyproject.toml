@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arogio-scraper"
+version = "0.1.0"
+description = "Local, provenance-first healthcare data acquisition for Arogio"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12",
+  "openpyxl>=3.1",
+  "pydantic>=2.7",
+  "pyyaml>=6.0",
+  "typer>=0.12",
+  "pdfplumber>=0.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+arogio = "arogio.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["arogio*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,5 @@
+verification:
+  stale_after_days: 90
+  authoritative_sources: [official_government, official_provider]
+  required_hospital_fields: [name, address, city]
+  required_doctor_fields: [full_name, specialization]
