@@ -6,7 +6,97 @@ A local, provenance-first Python toolkit for hospitals, doctors, and doctor/hosp
 
 The shared pipeline is implemented: configuration, canonical Pydantic models, SQLite persistence, stable IDs, normalization, validation, deduplication helpers, rate-limited public HTTP fetching, template-aware exporters, and local logging.
 
-The source adapter is intentionally fail-closed. No approved public source URL or parser contract was supplied, so the application will not silently choose or scrape a website. The owner-provided CSV templates are also not present in this workspace; copy them into `templates/` before using `--template`.
+One live source is enabled and working end to end:
+
+- **`osm_overpass_health_facilities`** — OpenStreetMap healthcare facilities via the
+  public Overpass API. Open data under **ODbL 1.0**, reusable with attribution,
+  and queried through the endpoint OpenStreetMap publishes for programmatic use.
+  India holds roughly 82,000 healthcare facilities, of which `amenity=hospital`
+  alone exceeds the ten-thousand target.
+
+Every other adapter remains fail-closed: no approved URL or parser contract was
+supplied, so the application will not silently choose or scrape a website. The
+owner-provided CSV templates are also not present in this workspace; copy them
+into `templates/` before using `--template`.
+
+### Collecting hospitals
+
+```bash
+python -m arogio scrape hospitals --state all --city all          # all of India
+python -m arogio scrape hospitals --state Rajasthan --city all    # one state
+python -m arogio scrape hospitals --state Rajasthan --city Jaipur # one city
+python -m arogio scrape hospitals --state all --kinds hospital,clinic,doctors
+```
+
+The run is chunked by state, rate limited, and bounded by `--max-minutes` and
+`--limit`. A failing chunk is reported and skipped rather than ending the run,
+and requests rotate across public Overpass mirrors so one busy host does not
+stall collection. Every raw response is persisted under `data/raw/`.
+
+### Capturing everything a source returned
+
+Each hospital record keeps the mapped fields *and* `osm_tags`, the complete
+upstream tag set, so a mapping gap never silently loses a value. Beyond name and
+location this includes facility capabilities (`facilities`: OPD, IPD, ICU,
+ambulance, blood bank, operating theatre, pathology/radiology labs, ventilator,
+delivery), regional-language names (`names_by_language`), staff counts, medical
+system, operational status, payment methods, fax, and Wikidata/Wikipedia links.
+
+An improved parser can be re-applied to past runs offline, because raw responses
+are kept as evidence:
+
+```bash
+python -m arogio source reprocess-raw          # rebuild entities, no HTTP
+```
+
+### Optional enrichment
+
+```bash
+python -m arogio enrich wikidata               # free, no API key
+```
+
+Hospitals carrying a `wikidata` tag gain founding date, bed count, official
+website, postal address and parent organisation. Enriched values live under
+`wikidata_enrichment` with their own source URL, and only ever fill fields the
+primary source left blank — a filled field is listed in `enriched_fields`.
+
+### Collecting several named states in one run
+
+```bash
+python -m arogio scrape hospitals --states "Haryana,Punjab,Delhi"
+```
+
+Prefer this over one process per state: the endpoint allows only a couple of
+concurrent slots, and a process per state re-runs the readiness probe each time,
+spending that allowance on setup instead of data.
+
+### Exporting
+
+`--schema canonical` writes all 43 stored fields; `--schema import` (the default)
+writes the narrow import-template shape.
+
+```bash
+python -m arogio export hospitals --city Rajasthan --schema canonical --format csv
+python -m arogio report completeness --entity hospitals
+
+# Everything, every field, one JSON file (nested values kept intact)
+python -m arogio export dataset --output data/exports/hospitals_full.json
+```
+
+`export dataset` writes a single document with a `metadata` header (record
+count, sources, licences, states covered, field list) and the full records. It
+keeps nested values such as `facilities`, `names_by_language`, `osm_tags` and
+`wikidata_enrichment`, which the flat column exports cannot represent.
+
+Records collected from OpenStreetMap must keep the attribution
+"© OpenStreetMap contributors" and the ODbL licence when redistributed; both are
+stored on every row.
+
+### Sources that need a key or permission
+
+`data.gov.in`'s National Hospital Directory is free but its direct CSV link now
+returns **HTTP 403**; it requires a registered (free) OGD API key. The remaining
+catalogue entries stay disabled pending access review.
 
 ## Setup (Windows)
 

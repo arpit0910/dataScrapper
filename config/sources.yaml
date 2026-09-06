@@ -1,4 +1,33 @@
 sources:
+  osm_overpass_health_facilities:
+    enabled: true
+    entity_types: [hospital]
+    name: "OpenStreetMap Healthcare Facilities (Overpass API)"
+    owner: "OpenStreetMap contributors"
+    category: government_open_data
+    # ODbL 1.0 permits reuse with attribution, and the Overpass API is a public
+    # endpoint published for programmatic queries, so automated access is
+    # explicitly permitted here rather than left unset.
+    source_status: approved
+    approved_usage: {discovery: true, verification: false, ingestion: true}
+    machine_access: {automation_permitted: true, local_storage_permitted: true, redistribution_permitted: true}
+    landing_page_url: https://www.openstreetmap.org
+    api_url: https://overpass-api.de/api/interpreter
+    # Mirrors are tried in order and each is probed for regional coverage
+    # before a run trusts it.  Add another full-planet mirror here to spread
+    # load; regional extracts (overpass.osm.ch) must not be listed, and mirrors
+    # that are slow or down cost probe time, so keep this list to healthy hosts.
+    api_urls:
+      - https://overpass-api.de/api/interpreter
+    format: json
+    access_mode: automated_public
+    license: "ODbL 1.0"
+    attribution: "© OpenStreetMap contributors"
+    requests_per_minute: 10
+    # A per-state chunk that has not answered in 90s is a stalled endpoint, not
+    # a big query; failing fast keeps a multi-state run bounded.
+    timeout_seconds: 90
+    retries: 3
   approved_source:
     enabled: false
     name: "Unconfigured approved source"

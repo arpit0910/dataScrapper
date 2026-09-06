@@ -7,3 +7,12 @@ data/*.db
 data/raw/
 data/exports/
 logs/*.log
+
+# Generated datasets. These are scraper output, not source, and the full export
+# exceeds GitHub's 100 MB per-file limit; regenerate with:
+#   python -m arogio export dataset --output data/exports/hospitals_full.json
+hospitals_full.json
+hospitals_*.json
+*.json.gz
+data/exports/
+data/*.db

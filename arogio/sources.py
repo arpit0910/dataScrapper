@@ -57,4 +57,13 @@ def build_source(name: str, config: dict) -> BaseSource:
     if name == "icici_lombard_network":
         from .sources_icici import ICICILombardSource
         return ICICILombardSource(config)
+    if name == "osm_overpass_health_facilities":
+        from .sources_osm import OsmOverpassHospitalAdapter
+        return OsmOverpassHospitalAdapter(config)
+    if name == "data_gov_in_hospital_directory":
+        from .sources_data_gov import DataGovHospitalAdapter
+        return DataGovHospitalAdapter()
+    if name == "rajasthan_rghs_empanelled_hospitals":
+        from .sources_rghs import RghsHospitalAdapter
+        return RghsHospitalAdapter()
     raise ValueError(f"No adapter is registered for source: {name}")

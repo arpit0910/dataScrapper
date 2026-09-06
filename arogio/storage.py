@@ -32,6 +32,27 @@ class Database:
         self.connection.execute("INSERT OR REPLACE INTO entities VALUES (?, ?, ?, ?)", (entity_type, entity_id, city, json.dumps(payload, default=str)))
         self.connection.commit()
 
+    def save_entities(self, entity_type: str, rows: list[tuple[str, str, dict[str, Any]]]) -> int:
+        """Persist many entities in one transaction.
+
+        Per-row commits dominate the runtime of a nationwide import, so a bulk
+        run writes once per chunk instead of once per record.
+        """
+        if not rows:
+            return 0
+        self.connection.executemany(
+            "INSERT OR REPLACE INTO entities VALUES (?, ?, ?, ?)",
+            [(entity_type, entity_id, city, json.dumps(payload, default=str)) for entity_id, city, payload in rows],
+        )
+        self.connection.commit()
+        return len(rows)
+
+    def count(self, entity_type: str) -> int:
+        self.initialize()
+        return self.connection.execute(
+            "SELECT COUNT(*) AS total FROM entities WHERE entity_type = ?", (entity_type,)
+        ).fetchone()["total"]
+
     def save_observation(self, entity_type: str, source: str, source_url: str, fetched_at: str, status: int, raw: str) -> None:
         digest = hashlib.sha256(raw.encode("utf-8")).hexdigest()
         self.connection.execute("INSERT INTO source_observations(entity_type, source, source_url, fetched_at, http_status, content_hash, raw_json) VALUES (?, ?, ?, ?, ?, ?, ?)", (entity_type, source, source_url, fetched_at, status, digest, raw))
