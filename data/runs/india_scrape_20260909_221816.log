@@ -1,0 +1,4 @@
+Local AI extraction: qwen2.5:3b at http://127.0.0.1:11434
+[probe] https://overpass-api.de/api/interpreter unusable (AllEndpointsFailedError)
+Wrote 42,157 hospitals record(s) with 77 distinct field(s) to data\exports\india_hospitals_local_ai.json (122.0 MB).
+Attribution: © OpenStreetMap contributors (ODbL 1.0)

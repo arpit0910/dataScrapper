@@ -326,6 +326,18 @@ def _scrape(entity: str, city: str, state: str, source: str) -> None:
     adapter.discover(Location(target["city"], target["state"], target["country"], tuple(target.get("pincode_prefixes", []))))
 
 
+def _resume_ids(rows: list[dict], source: str, model: str | None) -> set[str]:
+    """Skip saved source records, retrying missing/failed local extraction."""
+    return {
+        row["hospital_id"] for row in rows
+        if row.get("source") == source and row.get("hospital_id")
+        and (model is None or (
+            (row.get("local_ai_extraction") or {}).get("status") == "needs_review"
+            and (row.get("local_ai_extraction") or {}).get("model") == model
+        ))
+    }
+
+
 def _run_overpass(
     city: str,
     state: str,
@@ -335,6 +347,8 @@ def _run_overpass(
     max_minutes: float,
     save_raw: bool,
     states: tuple[str, ...] = (),
+    local_ai: bool = False,
+    resume: bool = False,
 ) -> None:
     """Collect live OpenStreetMap healthcare facilities under a time budget.
 
@@ -357,6 +371,13 @@ def _run_overpass(
     )
 
     app_config = load_yaml("app.yaml")
+    extractor = None
+    if local_ai:
+        model_config = app_config.get("local_model", {})
+        extractor = OllamaExtractor(model_config.get("model", "qwen2.5:3b"), model_config.get("endpoint", "http://127.0.0.1:11434"))
+        if not extractor.model_available():
+            raise typer.BadParameter("Configured local model is unavailable. Run model-status first.")
+        typer.echo(f"Local AI extraction: {extractor.model} at {extractor.endpoint}")
     db = Database(app_config.get("storage", {}).get("sqlite_path", "data/arogio_scraper.db"))
     db.initialize()
     limiter = RateLimiter(requests_per_minute=int(configured.get("requests_per_minute", 20)))
@@ -366,7 +387,7 @@ def _run_overpass(
     # Prove each mirror actually serves this region before trusting a long run
     # to it; a regional instance answers 200 with no elements for foreign areas.
     live_endpoints: list[str] = []
-    for endpoint in adapter.endpoints:
+    for endpoint in ([] if resume else adapter.endpoints):
         try:
             # A probe is a tiny count query, so it gets a short timeout: a
             # mirror too slow to answer it is too slow to collect from.  One
@@ -381,6 +402,9 @@ def _run_overpass(
             typer.echo(f"[probe] {endpoint} ok (probe returned {count})")
         else:
             typer.echo(f"[probe] {endpoint} skipped: serves no data for this region")
+    if resume:
+        live_endpoints = list(adapter.endpoints)
+        typer.echo("[resume] reusing saved state responses where available; new states use configured endpoints")
     if not live_endpoints:
         raise typer.BadParameter("No configured Overpass mirror returned data for this region.")
     adapter.endpoints = live_endpoints
@@ -389,8 +413,11 @@ def _run_overpass(
     started_at = datetime.now(timezone.utc).isoformat()
     run_id = f"{source}-{datetime.now(timezone.utc):%Y%m%d%H%M%S}"
     chunks = adapter.discover(target_location, states or None)
-    seen: set[str] = set()
+    seen = _resume_ids(db.entities("hospital"), source, extractor.model if extractor else None) if resume else set()
+    if resume:
+        typer.echo(f"[resume] skipping {len(seen)} already saved records; retrying missing or failed AI extraction")
     total_elements = accepted = skipped = 0
+    ai_succeeded = ai_failed = 0
     failures: list[str] = []
 
     typer.echo(f"run={run_id} chunks={len(chunks)} kinds={','.join(kinds)} limit={limit} budget={max_minutes:g}min")
@@ -410,10 +437,22 @@ def _run_overpass(
         )
         query = adapter.build_query(code, kinds, timeout)
         chunk_deadline = started + max_minutes * 60
+        cached = None
+        if resume:
+            snapshots = sorted(Path("data/raw", source).rglob("response_001.json"))
+            suffix = f"-{code}-kinds-{'_'.join(sorted(kinds))}"
+            cached = next((p for p in reversed(snapshots) if p.parent.name.endswith(suffix)), None)
+            if cached is None and kinds == ("hospital",):
+                cached = next((p for p in reversed(snapshots) if p.parent.name.endswith(f"-{code}")), None)
         try:
-            status, body, endpoint = post_with_failover(
-                adapter.endpoints, query, limiter, timeout, retries, deadline=chunk_deadline
-            )
+            if cached:
+                typer.echo(f"[{index:>2}/{len(chunks)}] {state_name}: resuming saved response {cached}")
+                status, body, endpoint = 200, cached.read_text(encoding="utf-8"), adapter.endpoints[0]
+            else:
+                typer.echo(f"[{index:>2}/{len(chunks)}] {state_name}: requesting source data (timeout={timeout}s, retries={retries})")
+                status, body, endpoint = post_with_failover(
+                    adapter.endpoints, query, limiter, timeout, retries, deadline=chunk_deadline
+                )
         except Exception as exc:  # noqa: BLE001 - one bad chunk must not end the run
             failures.append(f"{code}: {exc}")
             typer.echo(f"[{index:>2}/{len(chunks)}] {state_name:<38} FAILED ({exc})")
@@ -426,29 +465,52 @@ def _run_overpass(
             typer.echo(f"[{index:>2}/{len(chunks)}] {state_name:<38} FAILED (invalid JSON: {exc})")
             continue
 
-        if save_raw:
-            db.save_raw_snapshot(source, f"{run_id}-{code}", body, ".json")
-        db.save_observation("hospital", source, endpoint, datetime.now(timezone.utc).isoformat(), status, query)
+        if save_raw and not cached:
+            snapshot_id = f"{run_id}-{code}" if kinds == ("hospital",) else f"{run_id}-{code}-kinds-{'_'.join(sorted(kinds))}"
+            db.save_raw_snapshot(source, snapshot_id, body, ".json")
+        if not cached:
+            db.save_observation("hospital", source, endpoint, datetime.now(timezone.utc).isoformat(), status, query)
 
         batch: list[tuple[str, str, dict]] = []
+        already_saved = 0
         for record in records:
+            if time.monotonic() >= chunk_deadline:
+                break
             normalized = adapter.normalize_source_record(record, chunk_location)
             if not adapter.filter_location(normalized, chunk_location):
                 skipped += 1
                 continue
             if normalized["hospital_id"] in seen:
+                already_saved += 1
                 continue
             seen.add(normalized["hospital_id"])
             city_value = normalized.get("city") or normalized.get("district") or state_name
             normalized["city"] = city_value
+            if extractor is not None:
+                try:
+                    candidates = extractor.extract_tags(record.get("tags", {}), timeout=max(1, min(120, chunk_deadline - time.monotonic())))
+                    normalized["local_ai_extraction"] = {
+                        "model": extractor.model, "source_url": normalized.get("source_url"),
+                        "observed_at": datetime.now(timezone.utc).isoformat(),
+                        "status": "needs_review", "fields": candidates,
+                    }
+                    ai_succeeded += 1
+                    typer.echo(f"[local-ai] {normalized.get('name')}: extracted")
+                except Exception as exc:
+                    ai_failed += 1
+                    normalized["local_ai_extraction"] = {"model": extractor.model, "status": "failed", "error": str(exc)}
+                    typer.echo(f"[local-ai] extraction failed: {exc}")
             batch.append((normalized["hospital_id"], city_value, normalized))
+            if len(batch) % 25 == 0:
+                db.save_entities("hospital", batch[-25:])
+                typer.echo(f"[checkpoint] saved {accepted + len(batch)} records")
             if len(batch) + accepted >= limit:
                 break
         db.save_entities("hospital", batch)
         total_elements += len(records)
         accepted += len(batch)
         typer.echo(
-            f"[{index:>2}/{len(chunks)}] {state_name:<38} fetched={len(records):>6} kept={len(batch):>6} total={accepted:>6}"
+            f"[{index:>2}/{len(chunks)}] {state_name:<38} fetched={len(records):>6} kept={len(batch):>6} already_saved={already_saved} total={accepted:>6}"
         )
 
     duration = time.monotonic() - started
@@ -457,6 +519,8 @@ def _run_overpass(
         "elements": total_elements, "accepted": accepted, "skipped": skipped,
         "failures": failures, "duration_seconds": round(duration, 1),
         "license": configured.get("license"), "attribution": configured.get("attribution"),
+        "local_ai_model": extractor.model if extractor else None,
+        "local_ai_succeeded": ai_succeeded, "local_ai_failed": ai_failed,
     }
     db.save_run(run_id, source, started_at, datetime.now(timezone.utc).isoformat(), summary)
     typer.echo(
@@ -477,6 +541,8 @@ def scrape_hospitals(
     max_minutes: float = typer.Option(15.0, help="Wall-clock budget for the run"),
     save_raw: bool = typer.Option(True, help="Persist each raw API response"),
     states: str | None = typer.Option(None, help="Comma-separated states to collect in one run"),
+    local_ai: bool = typer.Option(False, "--local-ai", help="Extract source-supported review fields with the configured Ollama model"),
+    resume: bool = typer.Option(False, "--resume", help="Skip saved records; retry missing or failed AI extraction"),
 ) -> None:
     """Collect hospitals from a live approved source."""
     selected = tuple(kind.strip() for kind in kinds.split(",") if kind.strip())
@@ -486,8 +552,12 @@ def scrape_hospitals(
     configured = load_yaml("sources.yaml").get("sources", {}).get(source, {})
     if configured.get("access_mode") == "automated_public":
         chosen = tuple(part.strip() for part in states.split(",") if part.strip()) if states else ()
-        _run_overpass(city, state, source, selected, limit, max_minutes, save_raw, chosen)
+        _run_overpass(city, state, source, selected, limit, max_minutes, save_raw, chosen, local_ai, resume)
     else:
+        if resume:
+            raise typer.BadParameter("--resume currently supports the live Overpass source only")
+        if local_ai:
+            raise typer.BadParameter("--local-ai currently supports the live Overpass source only")
         _scrape("hospitals", city, state, source)
 
 

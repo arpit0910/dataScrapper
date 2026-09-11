@@ -1,0 +1,5 @@
+Usage: python -m arogio scrape hospitals [OPTIONS]
+Try 'python -m arogio scrape hospitals --help' for help.
+┌─ Error ─────────────────────────────────────────────────────────────────────┐
+│ Invalid value: No configured Overpass mirror returned data for this region. │
+└─────────────────────────────────────────────────────────────────────────────┘

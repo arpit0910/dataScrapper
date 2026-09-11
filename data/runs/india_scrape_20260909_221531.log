@@ -1,0 +1,11 @@
+Local AI extraction: qwen2.5:3b at http://127.0.0.1:11434
+[probe] https://overpass-api.de/api/interpreter ok (probe returned 187)
+[resume] skipping 40360 already saved records; retrying missing or failed AI extraction
+run=osm_overpass_health_facilities-20260909164208 chunks=36 kinds=hospital limit=100000 budget=720min
+[ 1/36] Uttar Pradesh                          fetched=  3590 kept=     0 total=     0
+[local-ai] extraction failed: Local model returned invalid JSON
+[local-ai] extraction failed: Local model returned invalid JSON
+[local-ai] extraction failed: Local model returned invalid JSON
+[ 2/36] Maharashtra                            fetched=  8227 kept=     3 total=     3
+[ 3/36] West Bengal                            fetched=  1198 kept=     0 total=     3
+[ 4/36] Bihar                                  fetched=   797 kept=     0 total=     3

@@ -40,7 +40,7 @@ class OllamaExtractor:
         """Run a tiny real extraction to prove the configured model can be used."""
         return self.extract("<h1>Example Hospital</h1><p>Phone: 0141-1234567</p>", ["name", "phone"])
 
-    def extract(self, html: str, fields: list[str]) -> dict:
+    def extract(self, html: str, fields: list[str], timeout: float = 120, allowed_values: list[str] | None = None) -> dict:
         if not self.is_available():
             raise LocalModelUnavailable("Ollama is not running at " + self.endpoint)
         prompt = (
@@ -49,10 +49,15 @@ class OllamaExtractor:
             "Use null when a value is absent or ambiguous. Never infer, translate, or fabricate values.\n\n"
             "HTML:\n" + html[:120000]
         )
-        body = json.dumps({"model": self.model, "prompt": prompt, "stream": False, "format": "json"}).encode()
+        schema = {"type": "object", "properties": {field: {"type": ["string", "null"]} for field in fields},
+                  "required": fields, "additionalProperties": False}
+        if allowed_values is not None:
+            schema["properties"] = {field: {"enum": [None, *allowed_values]} for field in fields}
+        body = json.dumps({"model": self.model, "prompt": prompt, "stream": False, "format": schema,
+                           "options": {"temperature": 0, "num_predict": 2048}}).encode()
         request = Request(f"{self.endpoint}/api/generate", data=body, headers={"Content-Type": "application/json"})
         try:
-            with urlopen(request, timeout=120) as response:
+            with urlopen(request, timeout=timeout) as response:
                 payload = json.loads(response.read().decode("utf-8"))
         except (URLError, OSError, json.JSONDecodeError) as exc:
             raise LocalModelUnavailable(f"Local model request failed: {exc}") from exc
@@ -60,4 +65,16 @@ class OllamaExtractor:
             result = json.loads(payload["response"])
         except (KeyError, TypeError, json.JSONDecodeError) as exc:
             raise LocalModelUnavailable("Local model returned invalid JSON") from exc
+        if not isinstance(result, dict):
+            raise LocalModelUnavailable("Local model returned a non-object JSON value")
         return {field: result.get(field) for field in fields}
+
+    def extract_tags(self, tags: dict, timeout: float = 120) -> dict:
+        """Keep only verbatim source-supported candidates for human review."""
+        fields = ["name", "phone", "email", "website", "address"]
+        values = [value for value in tags.values() if isinstance(value, str)]
+        result = self.extract(json.dumps(tags, ensure_ascii=False), fields, timeout=timeout,
+                              allowed_values=list(dict.fromkeys(values)))
+        return {field: value if isinstance(value, str) and value.strip()
+                and any(value in source_value for source_value in values) else None
+                for field, value in result.items()}

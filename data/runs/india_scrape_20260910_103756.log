@@ -1,0 +1,1012 @@
+Local AI extraction: qwen2.5:3b at http://127.0.0.1:11434
+[resume] reusing saved state responses where available; new states use configured endpoints
+[resume] skipping 40360 already saved records; retrying missing or failed AI extraction
+run=osm_overpass_health_facilities-20260909164817 chunks=36 kinds=hospital limit=100000 budget=720min
+[ 1/36] Uttar Pradesh: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909164208-IN-UP\response_001.json
+[ 1/36] Uttar Pradesh                          fetched=  3590 kept=     0 already_saved=3514 total=     0
+[ 2/36] Maharashtra: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909164208-IN-MH\response_001.json
+[local-ai] Madhusiddhi Hospital: extracted
+[local-ai] Sattva Pediatric - Dr. Rishabh K. Shah: extracted
+[local-ai] Dr Sarodes Clinic: extracted
+[ 2/36] Maharashtra                            fetched=  8227 kept=     3 already_saved=8067 total=     3
+[ 3/36] West Bengal: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909164208-IN-WB\response_001.json
+[ 3/36] West Bengal                            fetched=  1198 kept=     0 already_saved=1171 total=     3
+[ 4/36] Bihar: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909164208-IN-BR\response_001.json
+[ 4/36] Bihar                                  fetched=   797 kept=     0 already_saved=780 total=     3
+[ 5/36] Tamil Nadu: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-TN\response_001.json
+[local-ai] Government Hospital, Athimugam: extracted
+[local-ai] Chennai Medical Centre: extracted
+[ 5/36] Tamil Nadu                             fetched=  5847 kept=     2 already_saved=5755 total=     5
+[ 6/36] Madhya Pradesh: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-MP\response_001.json
+[local-ai] Government hospital Boradimal: extracted
+[ 6/36] Madhya Pradesh                         fetched=  2109 kept=     1 already_saved=2069 total=     6
+[ 7/36] Rajasthan: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-RJ\response_001.json
+[ 7/36] Rajasthan                              fetched=  2816 kept=     0 already_saved=2778 total=     6
+[ 8/36] Karnataka: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-KA\response_001.json
+[local-ai] Seventh Day Adventist Hospital: extracted
+[ 8/36] Karnataka                              fetched=  3610 kept=     1 already_saved=3571 total=     7
+[ 9/36] Gujarat: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-GJ\response_001.json
+[ 9/36] Gujarat                                fetched=  5209 kept=     0 already_saved=5151 total=     7
+[10/36] Andhra Pradesh: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-AP\response_001.json
+[10/36] Andhra Pradesh                         fetched=  4470 kept=     0 already_saved=4363 total=     7
+[11/36] Odisha: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-OD\response_001.json
+[local-ai] Chandralaya Hospital: extracted
+[local-ai] Government Hospital, Kurtunga: extracted
+[local-ai] Lion's Eye Hospital: extracted
+[local-ai] ESIC Hospital: extracted
+[local-ai] Railway Hospital: extracted
+[11/36] Odisha                                 fetched=  1025 kept=     5 already_saved=1006 total=    12
+[12/36] Telangana: resuming saved response data\raw\osm_overpass_health_facilities\2026\09\09\osm_overpass_health_facilities-20260909021106-IN-TS\response_001.json
+[local-ai] Jabisetty Hospital: extracted
+[local-ai] Rajashekar Kidney & Maternity Hospital: extracted
+[local-ai] Sanghamitra Hospitals: extracted
+[local-ai] Sai Ram Clinic: extracted
+[local-ai] Arun's Dada Hospital: extracted
+[local-ai] Sri Sai Aditya Hospital: extracted
+[local-ai] Cure polyclinic: extracted
+[local-ai] Jaya Maternity and ENT care centre: extracted
+[local-ai] Pulse Critical Care Hospital: extracted
+[local-ai] Raviteja Hospitals: extracted
+[local-ai] Ravinder Reddy Hospitals: extracted
+[local-ai] Sri Krupa Dental Hospital: extracted
+[local-ai] Naspur dispensary: extracted
+[local-ai] Dhanvantari hospitals: extracted
+[local-ai] Area dispensary hospital: extracted
+[local-ai] Kamareddy eye hospital: extracted
+[local-ai] Smell care dental hospital: extracted
+[local-ai] sri krishna eye hospital: extracted
+[local-ai] Skin and ENT hospital: extracted
+[local-ai] vikram eye hospital: extracted
+[local-ai] life hospitals: extracted
+[local-ai] S.V.R. Hospital: extracted
+[local-ai] sri venkateshwara dental and cosmetic hospital: extracted
+[local-ai] Jeevana jyothi hospital: extracted
+[local-ai] nakshatra hospital: extracted
+[checkpoint] saved 37 records
+[local-ai] laxmi narsimha hospital: extracted
+[local-ai] Sri vijaya sai dental hospital: extracted
+[local-ai] seva hospital: extracted
+[local-ai] Dr.Narayanareddy memorial eye hospital: extracted
+[local-ai] Dr.Agarwal hospital: extracted
+[local-ai] Dr. Narotham reddy childrens hospital: extracted
+[local-ai] chilkuri matha vaidyashala: extracted
+[local-ai] Ayyappa Orthopaedic and Childrens Hospital: extracted
+[local-ai] Siri skin ENT hospital: extracted
+[local-ai] Dr.sujataha maternity and syurgical nursing home: extracted
+[local-ai] swathi childrens hospital: extracted
+[local-ai] Sri Venkateshwara Childrens Hospital: extracted
+[local-ai] SRI LAXMI CHILDRENS HOSPITAL: extracted
+[local-ai] Beersheba Hospital: extracted
+[local-ai] Metpally Multi speciality Hospital: extracted
+[local-ai] Balaji Hospital.: extracted
+[local-ai] Meenakshi Hospital: extracted
+[local-ai] Mayuri Skin & ENT Hospital: extracted
+[local-ai] Sangam Hospital: extracted
+[local-ai] Srinivasa Multi Speciality Hospital: extracted
+[local-ai] Manovari Hospitals: extracted
+[local-ai] Vijaya Hospital: extracted
+[local-ai] Sadhana Hospital: extracted
+[local-ai] Ravikiran Children Hospital: extracted
+[local-ai] Sri Sai New Life Hospital: extracted
+[checkpoint] saved 62 records
+[local-ai] MANASA SKIN HOSPITAL: extracted
+[local-ai] Vinayaka Dental Care Hospital: extracted
+[local-ai] Navadurga Hospital: extracted
+[local-ai] Sanvi Hospital: extracted
+[local-ai] Sri Thirumala Hospital: extracted
+[local-ai] Geetha Nursing Home: extracted
+[local-ai] Siri Hospital: extracted
+[local-ai] Vasantha joythi hospital: extracted
+[local-ai] Geneva Hospital: extracted
+[local-ai] Mahalaxmi Hospitals: extracted
+[local-ai] L.K Hospitals: extracted
+[local-ai] Aparna Hospital: extracted
+[local-ai] Sri Srilatha Hospital: extracted
+[local-ai] Arpitha Hospital: extracted
+[local-ai] Swamy Children Hospital: extracted
+[local-ai] Pavan Clinic: extracted
+[local-ai] Refracto Eye Hospital: extracted
+[local-ai] Sri Sai Nursing Home: extracted
+[local-ai] Dr Sadhanapalli Pramod MD (Osmania) General Physician: extracted
+[local-ai] Belief Hospitals: extracted
+[local-ai] Ganesh Chest Hospital: extracted
+[local-ai] Chava Ramalingaiah Hospital: extracted
+[local-ai] Mother And Child Health Centre Khammam. MCH District Central Hospital VVP: extracted
+[local-ai] Sri Sai ENT Center: extracted
+[local-ai] Citi Nursing Home: extracted
+[checkpoint] saved 87 records
+[local-ai] AMR Superspeciality Hospital (Gastro & Liver Centre): extracted
+[local-ai] Surya Dental Hospital: extracted
+[local-ai] Sadana Hospital: extracted
+[local-ai] Venu's Hospital: extracted
+[local-ai] Suraksha Hospital: extracted
+[local-ai] Sri Swathi Hospital: extracted
+[local-ai] Sri Raghavendra Hospital: extracted
+[local-ai] Sri Hari Hospital: extracted
+[local-ai] Sri Balaji Skin Hospital: extracted
+[local-ai] Selection Medical & Hospital: extracted
+[local-ai] Rukmini Clinic: extracted
+[local-ai] Rajaram's Kasturi Ayurvedic Hospital: extracted
+[local-ai] R K Hospitals: extracted
+[local-ai] Psychriatist Hospital: extracted
+[local-ai] Prince Children Hospital: extracted
+[local-ai] Okaz Multi Speciality Hospital: extracted
+[local-ai] Manjunath Hospital: extracted
+[local-ai] Dr. Haroon Khan'S Multi Speciality Hospital: extracted
+[local-ai] Dr Sumanth Laser & Eye Hospital: extracted
+[local-ai] Dr Mohan's Smitha Children Hospital: extracted
+[local-ai] Dayasai Eye Hospital: extracted
+[local-ai] Ayyappa Eye Care: extracted
+[local-ai] Appa Hospital: extracted
+[local-ai] Anuradha Nursing Home: extracted
+[local-ai] KIMS Cruddle: extracted
+[checkpoint] saved 112 records
+[local-ai] srisri holistic: extracted
+[local-ai] Durga prasad: extracted
+[local-ai] sairam clinic: extracted
+[local-ai] chelmada anandarao hospitals: extracted
+[local-ai] SHEKAR HOSPITAL: extracted
+[local-ai] Apollo: extracted
+[local-ai] area hospital: extracted
+[local-ai] Titan eye plus: extracted
+[local-ai] Mythri Clinic: extracted
+[local-ai] Srinivasa Hospital: extracted
+[local-ai] lifespan hospitals: extracted
+[local-ai] Samanta Homeopathy: extracted
+[local-ai] mallikarjuna hospitals: extracted
+[local-ai] Shresta hospital: extracted
+[local-ai] Tirumala Hospital: extracted
+[local-ai] Ankura Children hospital: extracted
+[local-ai] primary health care center: extracted
+[local-ai] Sai rupini hospital: extracted
+[local-ai] Kakatiya children hospital: extracted
+[local-ai] Yousuf Memorial Hospital: extracted
+[local-ai] Dr.Satyam's Clinic: extracted
+[local-ai] konark diagonistic center: extracted
+[local-ai] Shanmukh Skin Hospital: extracted
+[local-ai] balaji skin hospital: extracted
+[local-ai] Dr.agarwals: extracted
+[checkpoint] saved 137 records
+[local-ai] Dr. Moinuddin clinic: extracted
+[local-ai] Vijaya Diagnostic Centre: extracted
+[local-ai] Suraksha Hospital: extracted
+[local-ai] Vijaya diagnostics: extracted
+[local-ai] saidatha homeo stores and clinic: extracted
+[local-ai] Venkateshwara Homeo Clinic: extracted
+[local-ai] Aditya Hospital: extracted
+[local-ai] KIMS Hospital: extracted
+[local-ai] cvv: extracted
+[local-ai] Govt Hospital: extracted
+[local-ai] Little Stars Children Hospital: extracted
+[local-ai] Susrutha Hospital: extracted
+[local-ai] Susrutha Hospital: extracted
+[local-ai] Buchi Reddy Hospital: extracted
+[local-ai] Nelakanta Hospital: extracted
+[local-ai] Govt. Primary Health Centre Dindi: extracted
+[local-ai] Satyavathi Multispecility Hospital Nalgonda: extracted
+[local-ai] Vidhyasagar Hospital: extracted
+[local-ai] Bhaskara Hospital: extracted
+[local-ai] Tirumala Nursing home: extracted
+[local-ai] FAITH HOSIPTAL: extracted
+[local-ai] Raaj Hospital: extracted
+[local-ai] Kavitha Reddy: extracted
+[local-ai] Bharati Nursing Home: extracted
+[local-ai] Sri sanjeevini: extracted
+[checkpoint] saved 162 records
+[local-ai] Osmania clinic: extracted
+[local-ai] Holistic Hospital: extracted
+[local-ai] People's Hospital: extracted
+[local-ai] People's health care: extracted
+[local-ai] VITAL'S Hospital: extracted
+[local-ai] Govt Hospital Nawabpet: extracted
+[local-ai] yashoda: extracted
+[local-ai] ESI Hospital , Seetharam Nagar Colony: extracted
+[local-ai] Brindavan Hospital: extracted
+[local-ai] Nova Life Hospital: extracted
+[local-ai] Shiva Sai Multi Speciality Hospital: extracted
+[local-ai] Sai Shubha MultiSpecality Hospital: extracted
+[local-ai] A.R.MultiSpecality Hospital: extracted
+[local-ai] Sri Venkateshwara Speciality Hospital: extracted
+[local-ai] Devender Reddy Super Speciality Hospital: extracted
+[local-ai] Government Hospital, Rajiv Colony Kamareddy: extracted
+[local-ai] Russh Multispeciality Hospital: extracted
+[local-ai] Sai Sanjeevani Hospital: extracted
+[local-ai] Meternity Child Heath Hospital ,Dharoor Camp: extracted
+[local-ai] Government Hospital, Kothagudem: extracted
+[local-ai] Government Hospital, Bachannapet: extracted
+[local-ai] Government Hospital, Thatikonda: extracted
+[local-ai] Government Hospital, Saidapur: extracted
+[local-ai] Prathima Nursing Home: extracted
+[local-ai] Sunshine Hospital: extracted
+[checkpoint] saved 187 records
+[local-ai] Sun Diagnostic Hospital: extracted
+[local-ai] Arogya Hospitals: extracted
+[local-ai] Sparsa Neuro and Emergency Hospital: extracted
+[local-ai] Dolphin Diagnostic Services: extracted
+[local-ai] Sri Abhaya Hospitals: extracted
+[local-ai] Ankura Hospital for Women & Children: extracted
+[local-ai] Sankalpa C Star PVT Hospital: extracted
+[local-ai] KHIMS Hospitals: extracted
+[local-ai] Panchavati Hospital: extracted
+[local-ai] Sanjana Palamoor Nursing Home: extracted
+[local-ai] Railway Hospital , Subhash Nagar: extracted
+[local-ai] Om Sai Hospital: extracted
+[local-ai] Sri Mithra Multispeciality Hospital: extracted
+[local-ai] Government Hospital, Thripuraram: extracted
+[local-ai] Government Hospital, Mulug: extracted
+[local-ai] Surabhi Multi Speciality Hospital: extracted
+[local-ai] Samraksha Hospital: extracted
+[local-ai] RVM Institute Of Medical Sciences And Research Center: extracted
+[local-ai] TRR General Hospital: extracted
+[local-ai] Sahasra Hospital: extracted
+[local-ai] Medicover Hospital ,Chandanagar: extracted
+[local-ai] Preeti Urology & Kidney Hospital ,BHEL, Lingampally: extracted
+[local-ai] Government Hospital, Karasguthy: extracted
+[local-ai] Narshimachary Hospital: extracted
+[local-ai] AMVI Hospital: extracted
+[checkpoint] saved 212 records
+[local-ai] Dr Shaivalini - Gynecologist: extracted
+[local-ai] Government Hospital, Lemoor: extracted
+[local-ai] Kamineni Hospital: extracted
+[local-ai] Aware Global Hospitals: extracted
+[local-ai] Archana Hospital: extracted
+[local-ai] Hegde Hospital: extracted
+[local-ai] Rainbow Children Hospital: extracted
+[local-ai] DIVA Multispeciality Clinics: extracted
+[local-ai] Pace Hospitals ,Madinaguda: extracted
+[local-ai] Suraksha Multispeciality Hospital: extracted
+[local-ai] Uchvaas Hospital: extracted
+[local-ai] Bhrungi Hospitals: extracted
+[local-ai] Chavan Hospitals: extracted
+[local-ai] Health Valley Hospital: extracted
+[local-ai] Viswas Hospital: extracted
+[local-ai] Ajara Hospitals: extracted
+[local-ai] Relief Hospitals: extracted
+[local-ai] Aravinda Super Speciality Hospital: extracted
+[local-ai] Amrutha Children Hospital: extracted
+[local-ai] Tricolour Hospital: extracted
+[local-ai] Prathima Hospitals: extracted
+[local-ai] Government ENT Hospital ,Koti: extracted
+[local-ai] SKS Hospital: extracted
+[local-ai] Navodaya Hospital: extracted
+[local-ai] Tapadia Diagnostics Centre: extracted
+[checkpoint] saved 237 records
+[local-ai] Brinnova rehabilation centre: extracted
+[local-ai] Vijaya Diagnostic Centre, Himayatnagar: extracted
+[local-ai] Oasis Fertility Centre: extracted
+[local-ai] Basant Sahney Hospital: extracted
+[local-ai] Oasis Fertility Centre: extracted
+[local-ai] Vasavi Hospital: extracted
+[local-ai] Partha Dental Skin Hair Clinic: extracted
+[local-ai] S L Diagnostic Center: extracted
+[local-ai] Praba's VCare Health Clinic (P) Ltd, Gachibowli: extracted
+[local-ai] Government Hospital, Suraj Bhan: extracted
+[local-ai] Mina multi speciality Hospital: extracted
+[local-ai] Dr Naveen Reddy Hospital: extracted
+[local-ai] Railway Health Unit, Kachiguda: extracted
+[local-ai] Madhava Nursing Home: extracted
+[local-ai] MAA E.N.T. Hospitals: extracted
+[local-ai] Mamata Academy of Medical Sciences Hospital: extracted
+[local-ai] OMNI Hospitals: extracted
+[local-ai] Rainbow Children's Medicare Pvt Ltd: extracted
+[local-ai] Remedy Hospitals: extracted
+[local-ai] Prasad Hospitals ,Nacharam: extracted
+[local-ai] Sivananda Rehabilitation Home: extracted
+[local-ai] Cosmo Derma: extracted
+[local-ai] Padmaja Hospital: extracted
+[local-ai] Pathcare Labs Pvt Ltd: extracted
+[local-ai] Save Hospitals: extracted
+[checkpoint] saved 262 records
+[local-ai] Srujana Hospitals: extracted
+[local-ai] Paramitha Children's Hospital: extracted
+[local-ai] Tesla Diagnostics: extracted
+[local-ai] K K Reddy Hospital: extracted
+[local-ai] Goutam Neuro Care: extracted
+[local-ai] Dr. Rao's ENT Super Speciality International Hospital: extracted
+[local-ai] Centre for DNA Fingerprinting and Diagnostics: extracted
+[local-ai] Sri Swastik Multispeciality Hospital: extracted
+[local-ai] Nandini Hospital: extracted
+[local-ai] Udbhava Hospital ,Miyapur: extracted
+[local-ai] Shri Wazra Multi Speciality Hospitals: extracted
+[local-ai] Sri Dharani Multispeciality Hospital: extracted
+[local-ai] Excel Hospitals: extracted
+[local-ai] Shraddha Hospital: extracted
+[local-ai] Ananya Hospital: extracted
+[local-ai] People's Hospital: extracted
+[local-ai] SLG Hospitals: extracted
+[local-ai] Shree Healthcare Multi Specialty Hospital: extracted
+[local-ai] Government Hospital, Dahegaon: extracted
+[local-ai] Sri Seetharam Memorial Hospital: extracted
+[local-ai] Ferticare IVF Asist: extracted
+[local-ai] DTC TB Unit Erragadda: extracted
+[local-ai] Dr.Vivek's Multispeciality Dental care: extracted
+[local-ai] Shakti Ayurvedic Clinic: extracted
+[local-ai] Viva Hospital: extracted
+[checkpoint] saved 287 records
+[local-ai] Viva Hospital: extracted
+[local-ai] VIVA Hospital: extracted
+[local-ai] Rich hosipital: extracted
+[local-ai] Sree Laxmi Hospital: extracted
+[local-ai] Rahul Meidials: extracted
+[local-ai] Nandini: extracted
+[local-ai] vijaya diagonistics: extracted
+[local-ai] Government uphc: extracted
+[local-ai] swathi clinc: extracted
+[local-ai] kamineni: extracted
+[local-ai] BDL Township Hospital: extracted
+[local-ai] Chenna reddy hospital: extracted
+[local-ai] siva sai hospital: extracted
+[local-ai] Rikshith medical: extracted
+[local-ai] balaji hospital: extracted
+[local-ai] Dr.Mahesh clinic: extracted
+[local-ai] PRAANAA PAIN CLINIC: extracted
+[local-ai] warangal hospital: extracted
+[local-ai] govt.maternity hospital: extracted
+[local-ai] RACHEL HOSPITAL: extracted
+[local-ai] GOVERNMENT HOSPITAL: extracted
+[local-ai] RAMYA SKIN CARE HOSPITAL: extracted
+[local-ai] Vijaya Diagnostics Center: extracted
+[local-ai] usha rani hospital: extracted
+[local-ai] sri sri holistic hospitals: extracted
+[checkpoint] saved 312 records
+[local-ai] Govt Area Hospital: extracted
+[local-ai] omega bannu hospital: extracted
+[local-ai] Goli Purnachandra Childrens Hospital: extracted
+[local-ai] Rojarani Hospital: extracted
+[local-ai] Radha Mohan Nursing Home: extracted
+[local-ai] Railway hospital: extracted
+[local-ai] Singereni Area Hospital: extracted
+[local-ai] sri srusti hospitals: extracted
+[local-ai] آئی کیئر حیدرآباد (سپر اسپیشلٹی آئی ہسپتال): extracted
+[local-ai] Mythri Hospital: extracted
+[local-ai] Vinayaka Nethralaya Eye Hospital: extracted
+[local-ai] medical store: extracted
+[local-ai] Metro hospital: extracted
+[local-ai] hs: extracted
+[local-ai] 1: extracted
+[local-ai] Avinash child hospital: extracted
+[local-ai] Dr Agarwals Eye Hospital: extracted
+[local-ai] Trinity Hospital: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Sri rama clinic: extracted
+[local-ai] kamala hospital: extracted
+[local-ai] Community Health Centre, Lalapet: extracted
+[local-ai] Area Hospital, Medak: extracted
+[local-ai] Community Health Centre, Cherial: extracted
+[local-ai] Community Health Centre, AMBERPET: extracted
+[checkpoint] saved 337 records
+[local-ai] Commuity Health Centre, Narasapur: extracted
+[local-ai] CKM Hospital,Warangal: extracted
+[local-ai] Area Hospital: extracted
+[local-ai] Area Hospital, Bhadrachalam: extracted
+[local-ai] Community Health Centre, Seethaphalmandi: extracted
+[local-ai] Sarojini Devi EYE Hospital: extracted
+[local-ai] AREA HOSPITAL MALKAJGIRI: extracted
+[local-ai] Community Health Centre, Asifabad: extracted
+[local-ai] District Hospital Tandur: extracted
+[local-ai] MCH Jangaon: extracted
+[local-ai] DK Govt Homoeopathic Hospital, Ramanthapur, Hyd: extracted
+[local-ai] CHC KHAIRATABAD: extracted
+[local-ai] Community Health Centre, AMEERPET: extracted
+[local-ai] Community Health Center Nadigudem: extracted
+[local-ai] Community Health Centre,Sirpur T: extracted
+[local-ai] Sai charita hospital: extracted
+[local-ai] AH NARAYANKHED: extracted
+[local-ai] Shishira hospitals: extracted
+[local-ai] Image Hospital: extracted
+[local-ai] Medkid children's hospital: extracted
+[local-ai] SubCentre, Bheemavaram: extracted
+[local-ai] Venkata Ramana Clinic: extracted
+[local-ai] Maholla Clinic: extracted
+[local-ai] Mohammadi Clinic: extracted
+[local-ai] Oasis Fertility: extracted
+[checkpoint] saved 362 records
+[local-ai] Susheela Hospital: extracted
+[local-ai] Kinige Digital Technologies pvt ltd near Hospital: extracted
+[local-ai] appolo medical shop1: extracted
+[local-ai] JNTU Hospital: extracted
+[local-ai] Omega Hospitals: extracted
+[local-ai] Amar Hospitals: extracted
+[local-ai] Yashoda Hospitals: extracted
+[local-ai] Sunridge Multi-Speciality Hospital: extracted
+[local-ai] D.K.GOVT. HOMOEO HOSPITAL: extracted
+[local-ai] Dua Hospital: extracted
+[local-ai] Community Health Center, Garla: extracted
+[local-ai] Community Health Centre, GAJWEL: extracted
+[local-ai] Area Hospital, Kamareddy: extracted
+[local-ai] Community Health Centre, Deverkonda: extracted
+[local-ai] Community Health Centre,Chennur: extracted
+[local-ai] Community Health Center, Makthal: extracted
+[local-ai] Area Hospital Miryalguda: extracted
+[local-ai] Community Health Centre, Kodangal: extracted
+[local-ai] Community Health Centre, Ghatkesar: extracted
+[local-ai] Community Health Centre, Madnoor: extracted
+[local-ai] Community Health Centre, Ghatkesar: extracted
+[local-ai] AREA HOSPITAL ZAHEERABAD: extracted
+[local-ai] Community Health Center Medchal: extracted
+[local-ai] Government Ayurvedic Hospital, Erragadda, Hyderabad: extracted
+[local-ai] Community Health Center, Yellandu: extracted
+[checkpoint] saved 387 records
+[local-ai] Community Health Centre Rajendranagar: extracted
+[local-ai] Community Health Centre, Kosgi: extracted
+[local-ai] Community Health Centre, BARKAS: extracted
+[local-ai] Niloufer Hospital: extracted
+[local-ai] CHC Maddur: extracted
+[local-ai] Community Health Centre, Sadasivpet: extracted
+[local-ai] Community Health Centre, Dharpally: extracted
+[local-ai] Community Health Centre, Morthad: extracted
+[local-ai] Commuity Health Centre, Koheer: extracted
+[local-ai] Standalone Homoeo Hospital: extracted
+[local-ai] Community Health Centre, Eturnagaram: extracted
+[local-ai] Community Health Centre, Bichkunda: extracted
+[local-ai] Area Hospital, Golconda: extracted
+[local-ai] Community Health Centre, Tupran: extracted
+[local-ai] Government Chest Hospital: extracted
+[local-ai] Community Health Centre, Varni: extracted
+[local-ai] Community Health Centre Mahadevapur: extracted
+[local-ai] Community Health Centre, Armoor: extracted
+[local-ai] Community Health Centre Maheshwaram: extracted
+[local-ai] Area Hospital Huzurnagar: extracted
+[local-ai] MG Govt Maternity Hospital, Petla Burz: extracted
+[local-ai] Area hospital Godavarikhani: extracted
+[local-ai] Community Health Centre, Sathuopalli: extracted
+[local-ai] MNJ Institute of Oncology and Regional Cancer Center: extracted
+[local-ai] Area Hospital Jangaon: extracted
+[checkpoint] saved 412 records
+[local-ai] Institute of Mental Health: extracted
+[local-ai] Area Hospital, Narayanpet: extracted
+[local-ai] Area Hospital Jagitial: extracted
+[local-ai] Community Health Centre, Balkonda: extracted
+[local-ai] Area Hospital ,Banswada: extracted
+[local-ai] Community Health Centre Dubbak: extracted
+[local-ai] Community Health Centre Pargi: extracted
+[local-ai] Community Health Centre, Aswaraopeta: extracted
+[local-ai] Community Health Centre, Ramannapet: extracted
+[local-ai] Area Hospital, Nagarjuna Sagar: extracted
+[local-ai] Community Health Centre, Venkatapuram: extracted
+[local-ai] Community Health Centre Metpally: extracted
+[local-ai] Community Health Center, Atmakur: extracted
+[local-ai] Community Health Centre, Ibrahimpatnam: extracted
+[local-ai] CHC Manuguru: extracted
+[local-ai] Community Health Center, Amrabad: extracted
+[local-ai] District Hospital Karimnagar: extracted
+[local-ai] Government Hospital Ground: extracted
+[local-ai] Government Hospital Ground: extracted
+[local-ai] Vandhana Hospital: extracted
+[local-ai] Hi: extracted
+[local-ai] Vandhana Hospital: extracted
+[local-ai] MK Dentistry: extracted
+[local-ai] Swasthya Dental Clinic: extracted
+[local-ai] Government District Hospital Gajwel: extracted
+[checkpoint] saved 437 records
+[local-ai] Children Hospital Gajwel: extracted
+[local-ai] SK + Diagnostics: extracted
+[local-ai] Venkateshwara eye hospital: extracted
+[local-ai] Revive Multispeciality Hospital: extracted
+[local-ai] governament hospital: extracted
+[local-ai] Sai charan Children's hospital: extracted
+[local-ai] Janani infertility center: extracted
+[local-ai] Reborn Skin and Hair Clinic: extracted
+[local-ai] Sai Ayush Ayurveda Hospital - wellness Hyderabad: extracted
+[local-ai] CGHS Bandlaguda: extracted
+[local-ai] Renova Hospitals: extracted
+[local-ai] Pi Health Hospital: extracted
+[local-ai] Oneders Clinics: extracted
+[local-ai] Sankalpa Multispeciality Hospital: extracted
+[local-ai] Medicare Hospitals: extracted
+[local-ai] Dispensary: extracted
+[local-ai] Junior's Children Hospital: extracted
+[local-ai] University Health Centre: extracted
+[local-ai] Arete Hospitals: extracted
+[local-ai] Dental clinic: extracted
+[local-ai] eyes specalist: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Medicover: extracted
+[local-ai] Govt street Hospital: extracted
+[local-ai] Adithya Hospital: extracted
+[checkpoint] saved 462 records
+[local-ai] Eye Hospital centre: extracted
+[local-ai] Chanda Nursing homes: extracted
+[local-ai] Pilies Clinic: extracted
+[local-ai] childern hospital: extracted
+[local-ai] Chetana Hospital: extracted
+[local-ai] Hospital: extracted
+[local-ai] Jntu Hospital: extracted
+[local-ai] primary hospital: extracted
+[local-ai] Lifesave multi-speciality hospital: extracted
+[local-ai] AADHYA SHREE HOSPITAL AADHYA MEDICAL: extracted
+[local-ai] Omega Dental Hospital: extracted
+[local-ai] Gokul Speciality Clinics: extracted
+[local-ai] emmbadi: extracted
+[local-ai] Office Of The Director Of Health, Telangana: extracted
+[local-ai] Saritha Dental Clinic: extracted
+[local-ai] Axon Hospital: extracted
+[local-ai] Mamata General and Super Speciality Hospital: extracted
+[local-ai] Virinchi Hospitals: extracted
+[local-ai] Rohini Super Speciality Hospital: extracted
+[local-ai] Fernandez Hospital: extracted
+[local-ai] Kamineni Hospital: extracted
+[local-ai] Olive Hospital: extracted
+[local-ai] Government Area Hospital, Kondapur: extracted
+[local-ai] Nizam's Institute Of Medical Sciences: extracted
+[local-ai] Nizamia Government General Hospital: extracted
+[checkpoint] saved 487 records
+[local-ai] Niloufer Hospital: extracted
+[local-ai] Durgabai Deshmukh Hospital and Research Centre: extracted
+[local-ai] Victoria Zenana Maternity Hospital: extracted
+[local-ai] Modern Government Maternity Hospital, Petla Burz: extracted
+[local-ai] Osmania General Hospital: extracted
+[local-ai] Area Hospital, Patancheru: extracted
+[local-ai] Ramdev Rao Hospital: extracted
+[local-ai] NIRD Health Centre: extracted
+[local-ai] Lotus Hospitals, Kukatpally: extracted
+[local-ai] Shreeda Children's Hospital: extracted
+[local-ai] Anitha Nursing Home: extracted
+[local-ai] Continental Hospitals: extracted
+[local-ai] Government General Hospital, Nizamabad: extracted
+[local-ai] Ramanadham hospital: extracted
+[local-ai] pananeeya dental hospital: extracted
+[local-ai] BHEL Hospital: extracted
+[local-ai] Hospital: extracted
+[local-ai] Angels Nursing College: extracted
+[local-ai] Government Hospital ,Kodad: extracted
+[local-ai] Meternary Hospital: extracted
+[local-ai] Sridevi Fertility Center: extracted
+[local-ai] Sri Narmada Hospital: extracted
+[local-ai] KIMS Hospital: extracted
+[local-ai] Mediciti Hospital: extracted
+[local-ai] CKM Maternity Hospital: extracted
+[checkpoint] saved 512 records
+[local-ai] Dr Sunanda Hospital: extracted
+[local-ai] Government Maternity Hospital: extracted
+[local-ai] مامدیپیڈی نگرجنہ ایریا اسپتال: extracted
+[local-ai] District hospital: extracted
+[local-ai] DISTRICT HOSPITAL SANGAREDDY: extracted
+[local-ai] Sir Ronald Ross Institute of Tropical and Communicable Diseases (FEVER HOSPITAL): extracted
+[local-ai] Gandhi Hospital: extracted
+[local-ai] GOVT HOSPITAL(SMALL): extracted
+[local-ai] Poulomi Hospital: extracted
+[local-ai] Apollo Hospital: extracted
+[local-ai] lucid diagnostics: extracted
+[local-ai] Sai Datta Hospital: extracted
+[local-ai] area hospital: extracted
+[local-ai] Area Hospital, Jangaon: extracted
+[local-ai] Care Hospital: extracted
+[local-ai] Remedy Hospital: extracted
+[local-ai] Remedy Hosptials: extracted
+[local-ai] lahari dental hospital: extracted
+[local-ai] Apollo DRDO Hospital: extracted
+[local-ai] bunny: extracted
+[local-ai] Apporva Children Hospital: extracted
+[local-ai] hospital: extracted
+[local-ai] tiriputi clinic: extracted
+[local-ai] Woodlands Hospital: extracted
+[local-ai] Kiran Skin Care Hospital: extracted
+[checkpoint] saved 537 records
+[local-ai] Sri Sri Holistic Hospitals: extracted
+[local-ai] People's Hospital: extracted
+[local-ai] Southern Regional Centre of Ali Yavar Jung National Institute for the Hearing Handicapped (AYJNIHH): extracted
+[local-ai] Pace Hospitals: extracted
+[local-ai] Bhaskara Orthopaedic Centre: extracted
+[local-ai] DR SHARATH CHANDRA: extracted
+[local-ai] Appolo Cradle Hospital: extracted
+[local-ai] VHeal ENT, ORTHO and Multispeciality Center: extracted
+[local-ai] Govt hospital: extracted
+[local-ai] Ctomatodont Dental Care: extracted
+[local-ai] Pulse hospital: extracted
+[local-ai] Lakshmi Narayana Speciality Clinics: extracted
+[local-ai] ASVINS Specialty Cancer Hospital: extracted
+[local-ai] Omega Hospital: extracted
+[local-ai] Yashoda Super Speciality Hospital - secunderabad: extracted
+[local-ai] Sowmya Children's Hospital: extracted
+[local-ai] SIDDHARTH EYE CENTRE: extracted
+[local-ai] Swarup Eye Centre: extracted
+[local-ai] WIN VISION EYE HOSPITAL: extracted
+[local-ai] Hyderabad Nursing Home: extracted
+[local-ai] Nirmala Maternity, Orthopaedic & General Hospital: extracted
+[local-ai] SRIKARA HOSPITALS: extracted
+[local-ai] apollo pharmacy: extracted
+[local-ai] Gleneagles Global Hospital: extracted
+[local-ai] Sunshine Heart Institute: extracted
+[checkpoint] saved 562 records
+[local-ai] Sunshine Hospitals Out Patient Care: extracted
+[local-ai] Urban health centre: extracted
+[local-ai] Aditya Hospital: extracted
+[local-ai] ITMR Speciality Diagnostics: extracted
+[local-ai] حیدرآباد ملٹی اسپیشلیٹی ہسپتال: extracted
+[local-ai] انڈو یو ایس ہسپتال: extracted
+[local-ai] Pharmacy: extracted
+[local-ai] Vasudeva Rao Clinic: extracted
+[local-ai] Healing touch hospital: extracted
+[local-ai] Shenoy Hospital: extracted
+[local-ai] Sunshine Hospital: extracted
+[local-ai] khuteja hospitals: extracted
+[local-ai] Owaisi Hospital and Research Centre: extracted
+[local-ai] Maxcure Hospital: extracted
+[local-ai] ashwini hospatial: extracted
+[local-ai] Sai Vani Super Specialty Hospital: extracted
+[local-ai] sri krishna childrens hospital: extracted
+[local-ai] Government Ayurvedic Teaching Hospital Warangal: extracted
+[local-ai] Vijaya Health Care: extracted
+[local-ai] Apollo Hospitals: extracted
+[local-ai] Care Hospitals - Secunderabad: extracted
+[local-ai] Medicover Hospitals Secunderabad: extracted
+[local-ai] Dr. Ramayya's Urology Nephrology Institute and Hospital Private Limited: extracted
+[local-ai] Government General and Chest Hospital: extracted
+[local-ai] Medwin Hospital: extracted
+[checkpoint] saved 587 records
+[local-ai] Ravi Helios Hospital: extracted
+[local-ai] Navodaya Institue of Medical Sciences: extracted
+[local-ai] Vijay Nursing Home: extracted
+[local-ai] Teja children's hospital: extracted
+[local-ai] Suneetha Hospital: extracted
+[local-ai] GAUTHAM HOSPITAL: extracted
+[local-ai] Vennela Hospital: extracted
+[local-ai] Mallika Hospital: extracted
+[local-ai] Yashoda ENT & Dental Hospital: extracted
+[local-ai] Dr Rajnikath Ultrasound Scan;Anil Surgicare: extracted
+[local-ai] Neha Shine Hospital: extracted
+[local-ai] Susrutha Peoples Hospital: extracted
+[local-ai] Vishnupuri: extracted
+[local-ai] Basavatarakam Indo American Cancer Institute And Research Centre: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Sushruta cancer hospital: extracted
+[local-ai] Harika Hospitals: extracted
+[local-ai] Tejas Hospital: extracted
+[local-ai] Amma Hospital,Mettugadda: extracted
+[local-ai] Life Care Hospital: extracted
+[local-ai] Mamata Hospitals: extracted
+[local-ai] Ganta Dayakar Reddy Hospital: extracted
+[local-ai] Ram Reddy Lions Eye Hospital: extracted
+[local-ai] sri sai hospitals: extracted
+[local-ai] Sagar Hospital: extracted
+[checkpoint] saved 612 records
+[local-ai] Primary Healthcare Center: extracted
+[local-ai] ArogyaMatha Hospital: extracted
+[local-ai] Care Hospitals: extracted
+[local-ai] ESI Hospital: extracted
+[local-ai] Yashoda Super Speciality Hospitals: extracted
+[local-ai] L V Prasad Eye Institute: extracted
+[local-ai] Singareni Area Hospital: extracted
+[local-ai] Singareni Main Hospital: extracted
+[local-ai] government hospital: extracted
+[local-ai] Asha Hospital: extracted
+[local-ai] Supraja Hospital: extracted
+[local-ai] Mamtha Hospital: extracted
+[local-ai] Vijaya Lakshmi Hospital: extracted
+[local-ai] Government Hospital, Narnoor: extracted
+[local-ai] District Hospital, Karimnagar: extracted
+[local-ai] mnr hospital: extracted
+[local-ai] Dr VRK Hospital: extracted
+[local-ai] Bhaskar General Hospital: extracted
+[local-ai] Ayaan Institute of Medical Sciences: extracted
+[local-ai] Apollo: extracted
+[local-ai] Amar Hospital: extracted
+[local-ai] Subhakara Hospital: extracted
+[local-ai] Sai Shilpa Hospital: extracted
+[local-ai] SREE DEVICHANDRA ENT Hospital: extracted
+[local-ai] Niloufer Children's Hospital: extracted
+[checkpoint] saved 637 records
+[local-ai] NOBLE HOSPITAL - Mahabubnagar: extracted
+[local-ai] Bhanodaya Multispecialty Hospital: extracted
+[local-ai] Amrutha Hospital,Mahbubnagar: extracted
+[local-ai] primary health center: extracted
+[local-ai] primary health care center: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Area Hospital, Bhadrachalam: extracted
+[local-ai] Community Health Centre, Yellandu: extracted
+[local-ai] SVS Hospital: extracted
+[local-ai] District Hospital, Mahabubnagar: extracted
+[local-ai] SVS Institute Of Dental Sciences: extracted
+[local-ai] ప్రకృతి చికిత్సాలయము: extracted
+[local-ai] Aakar Asha Hospital: extracted
+[local-ai] Prasad Hospital: extracted
+[local-ai] Apollo Hospitals: extracted
+[local-ai] Rainbow Children’s Hospital: extracted
+[local-ai] فیتھ اسپتال: extracted
+[local-ai] Sri Rn ayurved: extracted
+[local-ai] Indira Hospital: extracted
+[local-ai] Usha Mullapudi Cardiac Centre: extracted
+[local-ai] ESI Hospital: extracted
+[local-ai] ESI Hospital: extracted
+[local-ai] Lakshmi hospital: extracted
+[local-ai] Veterinary Science college: extracted
+[local-ai] ground: extracted
+[checkpoint] saved 662 records
+[local-ai] Maxwell Hospital: extracted
+[local-ai] Dr.vikram clinic: extracted
+[local-ai] Ragi hospital: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Gemini Health Care: extracted
+[local-ai] Balajihospital: extracted
+[local-ai] skhhospial: extracted
+[local-ai] eye care: extracted
+[local-ai] Murali krishna hospitall: extracted
+[local-ai] Sankaraya Eye Hospital: extracted
+[local-ai] ESI Hospital: extracted
+[local-ai] Vivekananda Hospital: extracted
+[local-ai] Sai Krishna Neuro Hospital: extracted
+[local-ai] TX Hospital: extracted
+[local-ai] Yashoda Hospital: extracted
+[local-ai] Pulse Clinics and Diagnostics: extracted
+[local-ai] ground: extracted
+[local-ai] Eye Hospital: extracted
+[local-ai] Dental centre: extracted
+[local-ai] eye hospital: extracted
+[local-ai] Adithya Hospital: extracted
+[local-ai] sri padmavathi hospital: extracted
+[local-ai] AADHYA SHREE HOSPITAL AADHYA MEDICAL: extracted
+[local-ai] Ayushman Arogya Mandir (Primary Health Centre), Garrepalli: extracted
+[local-ai] Shadan Hospital: extracted
+[checkpoint] saved 687 records
+[local-ai] Nizams Institute of Medical Sciences Hospital (NIMS): extracted
+[local-ai] AIG HOSPITALS: extracted
+[12/36] Telangana                              fetched=  2899 kept=   677 already_saved=2135 total=   689
+[13/36] Kerala: requesting source data (timeout=90s, retries=3)
+[13/36] Kerala                                 FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[14/36] Jharkhand: requesting source data (timeout=90s, retries=3)
+[14/36] Jharkhand                              FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[15/36] Assam: requesting source data (timeout=90s, retries=3)
+[15/36] Assam                                  FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[16/36] Punjab: requesting source data (timeout=90s, retries=3)
+[16/36] Punjab                                 FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[17/36] Chhattisgarh: requesting source data (timeout=90s, retries=3)
+[17/36] Chhattisgarh                           FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[18/36] Haryana: requesting source data (timeout=90s, retries=3)
+[18/36] Haryana                                FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[19/36] Delhi: requesting source data (timeout=90s, retries=3)
+[19/36] Delhi                                  FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[20/36] Jammu and Kashmir: requesting source data (timeout=90s, retries=3)
+[20/36] Jammu and Kashmir                      FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[21/36] Uttarakhand: requesting source data (timeout=90s, retries=3)
+[21/36] Uttarakhand                            FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[22/36] Himachal Pradesh: requesting source data (timeout=90s, retries=3)
+[22/36] Himachal Pradesh                       FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[23/36] Tripura: requesting source data (timeout=90s, retries=3)
+[23/36] Tripura                                FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[24/36] Meghalaya: requesting source data (timeout=90s, retries=3)
+[24/36] Meghalaya                              FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[25/36] Manipur: requesting source data (timeout=90s, retries=3)
+[25/36] Manipur                                FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[26/36] Nagaland: requesting source data (timeout=90s, retries=3)
+[26/36] Nagaland                               FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[27/36] Goa: requesting source data (timeout=90s, retries=3)
+[27/36] Goa                                    FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[28/36] Arunachal Pradesh: requesting source data (timeout=90s, retries=3)
+[28/36] Arunachal Pradesh                      FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[29/36] Puducherry: requesting source data (timeout=90s, retries=3)
+[29/36] Puducherry                             FAILED (All endpoints failed: https://overpass-api.de/api/interpreter:HTTP406, https://overpass-api.de/api/interpreter:HTTP406)
+[30/36] Mizoram: requesting source data (timeout=90s, retries=3)
+[local-ai] CHC Ngopa: extracted
+[local-ai] Nazareth Hospital, Kolasib: extracted
+[local-ai] CHC, Vairengte: extracted
+[local-ai] District Hospital,Kolasib: extracted
+[local-ai] PHC, Rawpuichhip: extracted
+[local-ai] Greenwood Hospital: extracted
+[local-ai] Sub-District Hospital,Saitual: extracted
+[local-ai] District Hospital, Serchhip: extracted
+[local-ai] Christian Hospital, Lawngtlai: extracted
+[local-ai] District Hospital, Siaha: extracted
+[local-ai] District Hospital, Mamit: extracted
+[local-ai] CHC, Sakawrdai: extracted
+[local-ai] Alpha Hospital: extracted
+[local-ai] Nazareth Hospitals: extracted
+[local-ai] State Referral Hospital,Falkawn: extracted
+[local-ai] Maraland Gospel Centenary Hospital: extracted
+[local-ai] Lcmc Hospital, Lawngtlai: extracted
+[local-ai] Bethesda Hospital: extracted
+[local-ai] Presbyterian Hospital: extracted
+[local-ai] Christian Hospital,M Kawnpui: extracted
+[local-ai] District Hospital,Lawngtai: extracted
+[local-ai] Vaivenga Hospital: extracted
+[local-ai] Aizawl Hospital & Research Centre: extracted
+[local-ai] Kulikawn Hospital: extracted
+[local-ai] Civil Hospital,Tlabung: extracted
+[checkpoint] saved 714 records
+[local-ai] Borapansury Hospital: extracted
+[local-ai] Civil Hospital,Lunglei: extracted
+[local-ai] B.N. Hospital,Kulikawn: extracted
+[local-ai] Lairam Christian Medical Centre & Hospital: extracted
+[local-ai] District Hospital,Champhai: extracted
+[local-ai] Mercy Hospital: extracted
+[local-ai] LRM Hospital: extracted
+[local-ai] DM Hospital: extracted
+[local-ai] John Williams Hospital: extracted
+[local-ai] Khawhai Hospital: extracted
+[local-ai] Med Aim Adventist Hospital: extracted
+[local-ai] Hope Hospital: extracted
+[local-ai] Rosewood Hospital: extracted
+[local-ai] Zotres Hospital: extracted
+[local-ai] District Hospital , Siaha: extracted
+[local-ai] City Hospital: extracted
+[local-ai] Zawlnuam Hospital: extracted
+[local-ai] Government Hospital, Durtlang North: extracted
+[local-ai] Ebenezar Hospital: extracted
+[local-ai] Aizawl Civil Hospital: extracted
+[local-ai] Ebenezar Hospital Area: extracted
+[local-ai] Aizawl Adventist Hospital: extracted
+[local-ai] Christian Hospital, Serkawn: extracted
+[local-ai] Trinity Hospital: extracted
+[30/36] Mizoram                                fetched=    50 kept=    49 already_saved=0 total=   738
+[31/36] Sikkim: requesting source data (timeout=90s, retries=3)
+[local-ai] Yuksam, PHC: extracted
+[local-ai] Government General Hospital Blood Bank - Namchi: extracted
+[local-ai] Central Referral Hospital: extracted
+[local-ai] Sikkim Manipal Institute of Medical Sciences: extracted
+[local-ai] Geyzing District Hospital: extracted
+[local-ai] Singtam District Hospital: extracted
+[local-ai] Tashiding Hospital: extracted
+[local-ai] District Hospital: extracted
+[local-ai] Lachen Hospital: extracted
+[local-ai] Baidhya Ayurvedic Hospital: extracted
+[local-ai] Mangan District Hospital: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] STNM Multispeciality Hospital: extracted
+[local-ai] 50 Bedded Ayush Hospital: extracted
+[local-ai] STNM Hospital: extracted
+[local-ai] Primary Health Centre: extracted
+[local-ai] Health & Wellness Center: extracted
+[31/36] Sikkim                                 fetched=    20 kept=    17 already_saved=0 total=   755
+[32/36] Chandigarh: requesting source data (timeout=90s, retries=3)
+[local-ai] PGI Emergency: extracted
+[local-ai] KD Cosmetic Surgery Centre,Sector 34-A: extracted
+[local-ai] PGI Chandigarh: extracted
+[local-ai] Dispesary: extracted
+[local-ai] Santokh Hospital: extracted
+[local-ai] Dharam Hospital: extracted
+[local-ai] Bharat Vikas Parishad Charitable Medical Centre: extracted
+[local-ai] Land Mark Hospital(Langol View Charitable Clinic and Maternity Home): extracted
+[local-ai] Advance Eye Center: extracted
+[local-ai] Government Pet Hospital: extracted
+[local-ai] Rameshwara Hospital: extracted
+[local-ai] Oxford Heart and Multispeciality Hospital: extracted
+[local-ai] Mukat Hospital and Heart Institute: extracted
+[local-ai] Nins Brain and Spine Hospital: extracted
+[local-ai] Ashwini Maternity Hospital: extracted
+[local-ai] Inscol Tertiary Care Hospital: extracted
+[local-ai] Deep Hospital: extracted
+[local-ai] Civil Hospital-Sector 22: extracted
+[local-ai] Chaitanya Hospital: extracted
+[local-ai] Grewal Eye Institute: extracted
+[local-ai] Civil hospital, Manimajra: extracted
+[local-ai] Abhilasha Hospital: extracted
+[local-ai] Arya Hospital: extracted
+[local-ai] Dabur Dhanwantry Hospital: extracted
+[local-ai] Arthoscopy and Spinal Endoscopy Centre: extracted
+[checkpoint] saved 780 records
+[local-ai] Virdi Eye Hospital(Virk Hospital): extracted
+[local-ai] Mangnum Hospital: extracted
+[local-ai] Grover Eye Laser and E.N.T Hospital: extracted
+[local-ai] Bedi Hospital: extracted
+[local-ai] Postgraduate Institute of Medical Education and Research (PGIMER): extracted
+[local-ai] Neeraj Eye Hospital: extracted
+[local-ai] Kapoor's Kidney and Urostone Centre Pvt.Ltd.: extracted
+[local-ai] Omni Hospital: extracted
+[local-ai] Tricity Hospital Pvt. Ltd.: extracted
+[local-ai] Happy Family Maternitys Children Hospital Pvt Ltd: extracted
+[local-ai] Kaushal Hospital, Chandigarh: extracted
+[local-ai] Police Hospital: extracted
+[local-ai] ESIC Hospital Ramdarbar: extracted
+[local-ai] Composite Hospital I.T.B.P: extracted
+[local-ai] Cloudnine Hospital: extracted
+[local-ai] Babe Ke Hospital And IMT: extracted
+[local-ai] Nirmal Dr. Bhasin Jannee Fertility Centre: extracted
+[local-ai] Dr. Ashok Sharma's Cornea Centre: extracted
+[local-ai] Dr. Chandan Trikha Homeopathic Hospital: extracted
+[local-ai] Pandhi Hospital: extracted
+[local-ai] Dr. Priyanka Sharma Gynaecologist: extracted
+[local-ai] Chd City Hospital: extracted
+[local-ai] Guru Nanak Multispeciality Hospital: extracted
+[local-ai] Kaushal Clinic & Clinical Lab: extracted
+[local-ai] Fortis Medcentre Hospital: extracted
+[checkpoint] saved 805 records
+[local-ai] Chhuttani Medical Centre - Psychiatrist & De-addiction Centre: extracted
+[local-ai] ARV Othopaedic Hospital: extracted
+[local-ai] Eden Hospital: extracted
+[local-ai] Mamta Child Health Care Centre: extracted
+[local-ai] Sarhind Orthopaedic Multispeciality Medical Centre: extracted
+[local-ai] Air Force Hospital: extracted
+[local-ai] Mental Health Institute: extracted
+[local-ai] Superintended Hospital Engineer Building: extracted
+[local-ai] GMCH SECTOR 32: extracted
+[local-ai] GMSH Sector-16: extracted
+[local-ai] Cancer Hospital: extracted
+[local-ai] New OPD: extracted
+[local-ai] RHTC Palsora: extracted
+[local-ai] Mental Health Institute: extracted
+[local-ai] Nehru Hospital: extracted
+[32/36] Chandigarh                             fetched=    68 kept=    65 already_saved=0 total=   820
+[33/36] Andaman and Nicobar Islands: requesting source data (timeout=90s, retries=3)
+[local-ai] प्रार्थमिक स्वास्थ्य सेवा केंद्र: extracted
+[local-ai] Govt Medical Centre: extracted
+[local-ai] INHS Dhanvantri: extracted
+[local-ai] Maricar Hospital: extracted
+[local-ai] Pillar Health Centre: extracted
+[local-ai] CMS Hospital: extracted
+[local-ai] Dr. Nikhil's Multi Speciality Hospital: extracted
+[local-ai] District Hospital: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Tusnabad Hospital: extracted
+[local-ai] Vidyadeep Surgicure Hospital: extracted
+[local-ai] Community Health Centre: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Ayush Hospital: extracted
+[local-ai] Arun Hospital: extracted
+[local-ai] Sanjeevani Hospital: extracted
+[local-ai] Dr. Rekha's Ayurvedic Hospital: extracted
+[local-ai] Rohin's Eye and Multispeciality Hospital: extracted
+[local-ai] Chakraborty Hospital: extracted
+[local-ai] Health Centre: extracted
+[local-ai] G B Pant Hospital, Port Blair: extracted
+[local-ai] Community Health Centre Diglipur: extracted
+[33/36] Andaman and Nicobar Islands            fetched=    22 kept=    22 already_saved=0 total=   842
+[34/36] Dadra and Nagar Haveli and Daman and Diu: requesting source data (timeout=90s, retries=3)
+[local-ai] Vardhaman Hospital, Dadra and Nagar Haveli: extracted
+[local-ai] Mukta General Hospital and Maternity Home: extracted
+[local-ai] Marigold Child Care Hospital and Nicu: extracted
+[local-ai] Government Hospital (CHC): extracted
+[local-ai] Atmaram Jog Memorial Hospital: extracted
+[local-ai] Hansa clinic and hospital: extracted
+[local-ai] Yogi Hospital: extracted
+[local-ai] Dr.Nikams Sri Sai Marigold Child Care Hospital and N I C U: extracted
+[local-ai] Darshan Eye Hospital: extracted
+[local-ai] Chaitanya Hospital: extracted
+[local-ai] Prayosha Hospital: extracted
+[local-ai] Shri Vinoba Bhave Civil Hospital: extracted
+[local-ai] Shri Shreeji Hospital - Silvassa: extracted
+[local-ai] Hari Om Hospital: extracted
+[local-ai] Shree Sainath Hospital, Dadra and Nagar Haveli: extracted
+[local-ai] Sai Krishhna Maternity Home: extracted
+[local-ai] Government Hospital, Diu: extracted
+[local-ai] Randha Hospital: extracted
+[local-ai] Sub-District Hospital, Khanvel: extracted
+[local-ai] Ashok Hospital: extracted
+[local-ai] Ashwini Hospital: extracted
+[local-ai] Care N Cure Hospital: extracted
+[local-ai] Life Care Hospital: extracted
+[local-ai] Pooja Hospital: extracted
+[local-ai] Sai Sarvoday Hospital: extracted
+[checkpoint] saved 867 records
+[local-ai] J. K. Hospital: extracted
+[local-ai] True Care Multispeciality Hospital: extracted
+[local-ai] Shayona Hospital: extracted
+[local-ai] Shree Jalaramkrupa General & Maternity Hospital: extracted
+[local-ai] Chaitanya Multispeciality Hospital: extracted
+[local-ai] City Heart Hospital: extracted
+[local-ai] Sanskar Hospital: extracted
+[local-ai] Krishna Kunj Hospital: extracted
+[local-ai] Government Hospital, Dholar: extracted
+[local-ai] Shivam Hospital: extracted
+[local-ai] Prayosha Hospital: extracted
+[local-ai] Government Hospital: extracted
+[34/36] Dadra and Nagar Haveli and Daman and Diu fetched=    38 kept=    37 already_saved=0 total=   879
+[35/36] Ladakh: requesting source data (timeout=90s, retries=3)
+[local-ai] Community Health Center Nubra: extracted
+[local-ai] Primary Health Center Tangtse: extracted
+[local-ai] Sub Center (Hospital): extracted
+[local-ai] Tibetian Health Centre: extracted
+[local-ai] Ayushman Arogya Mandir - Public Health Center Turtuk: extracted
+[local-ai] Community Health Center Drass: extracted
+[local-ai] Primary Health Centre Khaltsi: extracted
+[local-ai] Army hospital: extracted
+[local-ai] Sonam Norboo Memorial Hospital Leh: extracted
+[local-ai] Army Hospital Leh: extracted
+[local-ai] Mahabodhi Charitable Hospital Devachan: extracted
+[local-ai] Dispensary: extracted
+[local-ai] Optical clinic: extracted
+[local-ai] Community Health Center Padum: extracted
+[local-ai] Qamar Ali Akhoon Memorial Hospital Kargil: extracted
+[local-ai] Old Kargil District Hospital: extracted
+[35/36] Ladakh                                 fetched=    19 kept=    16 already_saved=0 total=   895
+[36/36] Lakshadweep: requesting source data (timeout=90s, retries=3)
+[local-ai] Government Hospital: extracted
+[local-ai] Government Hospital: extracted
+[local-ai] Rajiv Gandhi Speciality Hospital: extracted
+[local-ai] IG Hospital, Kavaratti: extracted
+[36/36] Lakshadweep                            fetched=     4 kept=     4 already_saved=0 total=   899
+
+Done in 60.8 min: elements=42018 accepted=899 skipped_out_of_area=759 failed_chunks=17
+Stored hospital rows in database: 43043
+Attribution: © OpenStreetMap contributors (ODbL 1.0)
+Wrote 43,043 hospitals record(s) with 77 distinct field(s) to data\exports\india_hospitals_local_ai.json (124.7 MB).
+Attribution: © OpenStreetMap contributors (ODbL 1.0)

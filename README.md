@@ -125,7 +125,23 @@ Ollama is supported as a local extraction aid. Configure its endpoint/model in `
 
 ```powershell
 python -m arogio model-status
+python -m arogio scrape hospitals --state Rajasthan --city Jaipur --limit 10 --max-minutes 5 --local-ai
 ```
+
+To continue an interrupted collection, add `--resume` to the same scrape command.
+It reuses saved state responses for the same facility kinds where available,
+fetching states without a matching saved response. It skips saved records by stable ID. With
+`--local-ai`, missing or failed extractions and records processed with a different
+model are retried. The limit applies to records processed in the resumed run.
+
+`--local-ai` runs the configured Ollama model on each accepted facility's raw
+OpenStreetMap tags. It stores verbatim source-supported candidates under
+`local_ai_extraction` with the model, source URL, timestamp and review status.
+These candidates do not overwrite canonical fields or mark a record verified.
+Use `export dataset` to retain this nested output. Failed inference is recorded
+on the row; ordinary source records are still saved. Start with a small limit,
+since local inference adds time per record. The installed model can be changed
+through `local_model.model` in `config/app.yaml`.
 
 The model only extracts explicit page values into structured JSON. Deterministic validation, source evidence, location checks, and verification still decide what can be exported.
 
