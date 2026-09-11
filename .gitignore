@@ -5,14 +5,25 @@ __pycache__/
 .pytest_cache/
 data/*.db
 data/raw/
-data/exports/
 logs/*.log
 
-# Generated datasets. These are scraper output, not source, and the full export
-# exceeds GitHub's 100 MB per-file limit; regenerate with:
+# Scraper working files; the root-level h.json copy is the uncompressed
+# 136 MB export and must never be committed (GitHub rejects >100 MB).
+/h.json
+
+# Generated datasets. These are scraper output, not source. The uncompressed
+# full export is ~136 MB and exceeds GitHub's 100 MB per-file limit, so only
+# the gzipped copy is tracked. Regenerate with:
 #   python -m arogio export dataset --output data/exports/hospitals_full.json
 hospitals_full.json
 hospitals_*.json
 *.json.gz
-data/exports/
-data/*.db
+
+# Ignore the exports tree, but list it as a glob rather than a bare directory:
+# git will not descend into an excluded directory, so a negation below could
+# not re-include anything inside it.
+data/exports/*
+
+# ...except the compressed full export, which we do ship. This negation must
+# stay last: with gitignore, the final matching pattern wins.
+!data/exports/hospitals_full.json.gz
